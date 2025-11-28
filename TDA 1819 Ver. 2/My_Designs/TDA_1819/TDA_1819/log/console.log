@@ -1,0 +1,183 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.1 [s].
+asim -t ns -O5 +access +r +m+usuario usuario usuario_architecture
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+acom -O3 -e 100 -work tda_1819 -2002  $dsn/src/Packages/const_memoria.vhd "$dsn/src/Usuario/PC/2. CPU/2. Etapas/5. Writeback/writeback.vhd" "$dsn/src/Usuario/PC/2. CPU/2. Etapas/2. Decode/decode.vhd" "$dsn/src/Usuario/PC/1. Ensamblador/ensamblador.vhd"
+# Compile Package "const_memoria"
+# Compile Package Body "const_memoria"
+# Compile Entity "writeback"
+# Compile Architecture "WRITEBACK_ARCHITECTURE" of Entity "writeback"
+# Compile Entity "decode"
+# Compile Architecture "decode_architecture" of Entity "decode"
+# Compile Entity "ensamblador"
+# Compile Architecture "ENSAMBLADOR_ARCHITECTURE" of Entity "ensamblador"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.3 [s]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ns.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.2 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 57053 kB (elbread=427 elab2=56477 kernel=149 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\maide\OneDrive\Escritorio\TdA\Github Version\TDA-1819-Ver.-2\TDA 1819 Ver. 2\My_Designs\TDA_1819\TDA_1819\src\wave.asdb
+#  09:47 a. m., viernes, 28 de noviembre de 2025
+#  Simulation has been initialized
+run
+# EXECUTION:: WARNING: El programa 'Assembler/prueba.asm' ha sido ensamblado exitosamente
+# EXECUTION:: Time: 451 ns,  Iteration: 1,  Instance: /usuario,  Process: Main.
+# EXECUTION:: WARNING: El programa 'Assembler/prueba.asm' ha sido ejecutado exitosamente
+# EXECUTION:: Time: 4100 ns,  Iteration: 1,  Instance: /usuario,  Process: Main.
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+asim -t ns -O5 +access +r +m+usuario usuario usuario_architecture
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ns.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.2 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 57053 kB (elbread=427 elab2=56477 kernel=149 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\maide\OneDrive\Escritorio\TdA\Github Version\TDA-1819-Ver.-2\TDA 1819 Ver. 2\My_Designs\TDA_1819\TDA_1819\src\wave.asdb
+#  09:47 a. m., viernes, 28 de noviembre de 2025
+#  Simulation has been initialized
+run
+# EXECUTION:: WARNING: El programa 'Assembler/prueba.asm' ha sido ensamblado exitosamente
+# EXECUTION:: Time: 451 ns,  Iteration: 1,  Instance: /usuario,  Process: Main.
+# EXECUTION:: WARNING: El programa 'Assembler/prueba.asm' ha sido ejecutado exitosamente
+# EXECUTION:: Time: 4100 ns,  Iteration: 1,  Instance: /usuario,  Process: Main.
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# Waveform file 'untitled.awc' connected to 'C:/Users/maide/OneDrive/Escritorio/TdA/Github Version/TDA-1819-Ver.-2/TDA 1819 Ver. 2/My_Designs/TDA_1819/TDA_1819/src/wave.asdb'.
+endsim
+# VSIM: Simulation has finished.
+# Waveform file 'C:/Users/maide/OneDrive/Escritorio/TdA/Github Version/TDA-1819-Ver.-2/TDA 1819 Ver. 2/My_Designs/TDA_1819/TDA_1819/src/simulacion.awc' connected to 'C:/Users/maide/OneDrive/Escritorio/TdA/Github Version/TDA-1819-Ver.-2/TDA 1819 Ver. 2/My_Designs/TDA_1819/TDA_1819/src/simulacion.asdb'.
+# Waveform file 'untitled.awc' connected to 'C:/Users/maide/OneDrive/Escritorio/TdA/Github Version/TDA-1819-Ver.-2/TDA 1819 Ver. 2/My_Designs/TDA_1819/TDA_1819/src/simulacion.asdb'.
+asim -t ns -O5 +access +r +m+usuario usuario usuario_architecture
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ns.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 57053 kB (elbread=427 elab2=56477 kernel=149 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\maide\OneDrive\Escritorio\TdA\Github Version\TDA-1819-Ver.-2\TDA 1819 Ver. 2\My_Designs\TDA_1819\TDA_1819\src\wave.asdb
+#  09:48 a. m., viernes, 28 de noviembre de 2025
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'C:/Users/maide/OneDrive/Escritorio/TdA/Github Version/TDA-1819-Ver.-2/TDA 1819 Ver. 2/My_Designs/TDA_1819/TDA_1819/src/wave.asdb'.
+run
+# EXECUTION:: WARNING: El programa 'Assembler/prueba.asm' ha sido ensamblado exitosamente
+# EXECUTION:: Time: 451 ns,  Iteration: 1,  Instance: /usuario,  Process: Main.
+# EXECUTION:: WARNING: El programa 'Assembler/prueba.asm' ha sido ejecutado exitosamente
+# EXECUTION:: Time: 4100 ns,  Iteration: 1,  Instance: /usuario,  Process: Main.
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+asim -t ns -O5 +access +r +m+usuario usuario usuario_architecture
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ns.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.2 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 57053 kB (elbread=427 elab2=56477 kernel=149 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\maide\OneDrive\Escritorio\TdA\Github Version\TDA-1819-Ver.-2\TDA 1819 Ver. 2\My_Designs\TDA_1819\TDA_1819\src\wave.asdb
+#  09:49 a. m., viernes, 28 de noviembre de 2025
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'C:/Users/maide/OneDrive/Escritorio/TdA/Github Version/TDA-1819-Ver.-2/TDA 1819 Ver. 2/My_Designs/TDA_1819/TDA_1819/src/wave.asdb'.
+run
+# EXECUTION:: WARNING: El programa 'Assembler/prueba.asm' ha sido ensamblado exitosamente
+# EXECUTION:: Time: 451 ns,  Iteration: 1,  Instance: /usuario,  Process: Main.
+# EXECUTION:: WARNING: El programa 'Assembler/prueba.asm' ha sido ejecutado exitosamente
+# EXECUTION:: Time: 4100 ns,  Iteration: 1,  Instance: /usuario,  Process: Main.
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/IR}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/IP}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/FLAGS}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/FPFLAGS}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/BP}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/SP}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/RA}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R0}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R1}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R2}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R3}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R4}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R5}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R6}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R7}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R8}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R9}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R10}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R11}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R12}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R13}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R14}
+# add wave -noreg {/usuario/UUT/UUT2/UUT7/R15}
+# VSIM: 23 object(s) traced.
+# add wave -noreg {/usuario/UUT/UUT4/Stack_Memory(32763)}
+# add wave -noreg {/usuario/UUT/UUT4/Stack_Memory(32764)}
+# add wave -noreg {/usuario/UUT/UUT4/Stack_Memory(32765)}
+# add wave -noreg {/usuario/UUT/UUT4/Stack_Memory(32766)}
+# add wave -noreg {/usuario/UUT/UUT4/Stack_Memory(32767)}
+# add wave -noreg {/usuario/UUT/UUT4/Stack_Memory(32768)}
+# VSIM: 6 object(s) traced.
+# add wave -noreg {/usuario/UUT/UUT2/UUT2/UUT2/StallBrEX}
+# add wave -noreg {/usuario/UUT/UUT2/UUT2/UUT2/StallSTR}
+# add wave -noreg {/usuario/UUT/UUT2/UUT2/UUT2/StallRAW}
+# add wave -noreg {/usuario/UUT/UUT2/UUT2/UUT2/StallWAWAux}
+# VSIM: 4 object(s) traced.
+endsim
+# VSIM: Simulation has finished.

@@ -1543,7 +1543,7 @@ begin
 					end if;
 				end if;
 				StopInit <= '1';
-			
+			-- CÓDIGO NUEVO
 			WHEN POPH =>
                 -- Configuración de Lectura de Memoria
                 IDtoMA.mode     <= std_logic_vector(to_unsigned(MEM_MEM, IDtoMA.mode'length));
@@ -1552,7 +1552,7 @@ begin
                 
                 -- Configuración de Writeback Especial (WB_POP)
                 IDtoWB.datasize <= std_logic_vector(to_unsigned(2, IDtoWB.datasize'length));
-                IDtoWB.source   <= std_logic_vector(to_unsigned(WB_POP, IDtoWB.source'length)); -- modo POP
+                IDtoWB.source   <= std_logic_vector(to_unsigned(WB_POP, IDtoWB.source'length)); -- Modo POP
                 
                 -- Registro destino 'rd'
                 rdAux := to_integer(unsigned(IFtoIDLocal.package1(7 downto 0))) + 1;
@@ -1576,7 +1576,8 @@ begin
 
                     -- Enviamos el nuevo valor del SP
                     IDtoWB.data.decode <= std_logic_vector(to_unsigned(addrAux, 32));
-                end if;	
+                end if;
+			--
 				
 			-- CÓDIGO NUEVO	
 			WHEN PUSHH =>

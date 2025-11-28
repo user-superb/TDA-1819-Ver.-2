@@ -258,7 +258,7 @@ begin
             IdRegWB <= std_logic_vector(to_unsigned(Mode-1, IdRegWB'length));     
             SizeRegWB <= RecInWBAct.datasize;
             
-            -- Inicializamos buses en 0 o Z según prefieras
+            -- Inicializamos buses en 0
             DataRegInWB <= (others => '0'); 
             DataSPOutWB <= (others => '0');
 

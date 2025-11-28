@@ -848,7 +848,7 @@ begin
     VARIABLE is_minus: BOOLEAN;
 						   
 	BEGIN
-        -- 1. Verificar nombre de instrucción (ej: "lh", "sw")
+        -- Verificar nombre de instrucción
 		for j in INSTTD_NAME'RANGE loop
 			if (INSTTD_NAME(j) = ' ') then
 				exit;
@@ -870,7 +870,7 @@ begin
 				indice := indice + 1;
 			end loop;
 
-            -- 2. Analizar Primer Operando (Registro destino/fuente)
+            -- Analizar Primer Operando (Registro destino/fuente)
 			if (((INSTTD_SIZE = 6) and (INSTTD_NAME(2) /= 'f')) or (INSTTD_NAME = "mrf")) then
 				if (cadena(indice) /= 'r') then
 					report "Error en la línea " & integer'image(num_linea) & " del programa '" & trim(nombre) & "': el primer operando debe ser un registro entero (rX)"
@@ -937,14 +937,11 @@ begin
 			end if;
 			indice := indice + 1; 
 
-            -- 3. Analizar Segundo Operando (Inmediato + Base)
+            -- Analizar Segundo Operando (Inmediato + Base)
 			if (INSTTD_SIZE = 6) then
-				-- A. Intentar como VARIABLE (Etiqueta)
+				-- Intentar como VARIABLE (Etiqueta)
 				match := false; -- Reiniciamos match para búsqueda de variable
 				for j in 1 to cant_variables loop
-                    -- Lógica de comparación de strings
-                    -- (Asumimos que variables(j).name es correcto)
-                    -- Simplificación: chequeo caracter a caracter
                     match := true;
                     i_aux := indice;
                     for k in 1 to variables(j).namelength loop
@@ -962,7 +959,7 @@ begin
 					end if;
 				end loop; 
 
-				-- B. Si no es variable, intentar como NÚMERO (Inmediato literal)
+				-- Si no es variable, intentar como NÚMERO (Inmediato literal)
 				if (not match) then
                     val_inm := 0;
                     is_minus := false;
@@ -999,14 +996,14 @@ begin
 					severity FAILURE;
 				end if;
 
-                -- 4. Analizar Registro Base: (reg)
+                -- Analizar Registro Base: (reg)
 				if (cadena(indice) /= '(') then
 					report "Error en la línea " & integer'image(num_linea) & " del programa '" & trim(nombre) & "': falta paréntesis de apertura"
 					severity FAILURE;
 				end if;
 				indice := indice + 1;
 
-                -- NUEVA LÓGICA: Detección de 'sp' vs 'rX'
+                -- NUEVA LÓGICA: Detección de 'sp' y 'rX'
 				if (cadena(indice) = 's' and cadena(indice+1) = 'p') then
                     -- Caso SP (Stack Pointer)
 					addrReg := ID_SP; -- ID 37
@@ -1056,7 +1053,7 @@ begin
 					severity FAILURE;
 				end if;
 				
-                -- ESCRITURA EN MEMORIA DE INSTRUCCIONES
+                -- Cabecera
 				indice := indice + 1;
 				InstAddrBusComp <= std_logic_vector(to_unsigned(addr_linea, InstAddrBusComp'length));
 				InstDataBusOutComp <= std_logic_vector(to_unsigned(INSTTD_SIZE, InstDataBusOutComp'length));
@@ -1087,9 +1084,8 @@ begin
 				EnableCompToInstMem <= '0';	
 				WAIT FOR 1 ns;
 
-                -- Inmediato (addrInm) - CORREGIDO CON TO_SIGNED
+                -- Inmediato (addrInm)
 				InstAddrBusComp <= std_logic_vector(to_unsigned(addr_linea+3, InstAddrBusComp'length));
-                -- Cambio Clave: Usamos to_signed para soportar negativos y luego cast a vector
 				InstDataBusOutComp <= std_logic_vector(to_signed(addrInm, InstDataBusOutComp'length));
 				InstSizeBusComp <= std_logic_vector(to_unsigned(2, InstSizeBusComp'length));
 				InstCtrlBusComp <= WRITE_MEMORY;
@@ -1110,8 +1106,6 @@ begin
 
 			else
                 -- Bloque ELSE para instrucciones de otro tamaño (ej: mov reg, reg)
-                -- Este bloque se mantiene igual que tu original ya que no usa inmediatos
-                -- Solo copio la lógica original para completitud
 				if (INSTTD_NAME /= "mfr") then
 					if (cadena(indice) /= 'f') then
 						report "Error..." severity FAILURE;
@@ -1123,16 +1117,9 @@ begin
 					end if;
 					numReg2 := 0;
 				end if;
-                -- ... (Resto del parseo de registro 2)
                 indice := indice + 1;
 				if (not isNumber(cadena(indice))) then
-                    -- ...
                 end if;
-                -- ... (Parseo dígitos)
-                
-                -- ... (Escritura en memoria para instrucciones reg-reg)
-                -- Como esto no fue modificado, asegúrate de mantener el bloque 'else' original de tu código
-                -- para instrucciones que no son de tamaño 6.
 			end if;
 			i := indice;
 			check := true;
@@ -2157,6 +2144,7 @@ begin
 		end if;
 	END checkInstCt;
 	
+	-- NUEVO CÓDIGO
 	PROCEDURE checkInstSt(CONSTANT cadena, INSTST_NAME: IN STRING; 
 						  CONSTANT INSTST_CODE: STD_LOGIC_VECTOR(7 downto 0); CONSTANT INSTST_SIZE: IN INTEGER; 
 						  i: INOUT INTEGER; check: INOUT BOOLEAN; CONSTANT nombre: IN STRING; 
@@ -2275,6 +2263,7 @@ begin
 			check := false;
 		end if;
 	END checkInstSt;
+	--
 	
 	PROCEDURE checkCode(labels: INOUT label_records; cant_labels: INOUT INTEGER;
 						offsets: INOUT offset_records; cant_offsets: INOUT INTEGER;
